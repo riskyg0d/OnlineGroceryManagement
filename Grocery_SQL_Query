@@ -1,0 +1,119 @@
+--CREATE TABLE Customer_Registration (
+--    CustomerID INT PRIMARY KEY NOT NULL,
+--    CustomerName VARCHAR(255) NOT NULL,
+--    Email VARCHAR(255) NOT NULL,
+--    Password VARCHAR(255) NOT NULL,
+--    Address VARCHAR(255) NOT NULL,
+--    ContactNumber INT NOT NULL
+--);
+
+
+--select * from CUSTOMER_REGISTRATION;
+
+
+
+--CREATE TABLE Product_Table (
+--    ProductID INT PRIMARY KEY NOT NULL,
+--    ProductName VARCHAR(255) NOT NULL,
+--    Price INT NOT NULL,
+--    Quantity INT NOT NULL,
+--    Reserved VARCHAR(50) NOT NULL,
+--    CustomerID INT NOT NULL,
+--    FOREIGN KEY (CustomerID) REFERENCES Customer_Registration(CustomerID)
+--);
+--
+--select * from PRODUCT_TABLE;
+--
+
+--INSERT INTO Customer_Registration (CustomerID, CustomerName, Email, Password, Address, ContactNumber)
+--VALUES (1, 'Anurag', 'anurag@gmail.com', 'password123', 'Mumbai', 9876543210);
+--
+----
+--select * from CUSTOMER_REGISTRATION
+----delete from Customer_Registration where CustomerId=1;
+--
+--Drop table Customer_Registration;
+--
+--Drop table Product_Table;
+--CREATE TABLE Customer_Registration (
+--    CustomerID INT PRIMARY KEY NOT NULL,
+--    CustomerName VARCHAR(255) NOT NULL,
+--    Email VARCHAR(255) NOT NULL,
+--    Password VARCHAR(255) NOT NULL,
+--    Address VARCHAR(255) NOT NULL,
+--    ContactNumber BIGINT NOT NULL
+--);
+--CREATE TABLE Customer_Registration (
+--    CustomerID INT PRIMARY KEY NOT NULL,
+--    CustomerName VARCHAR(255) NOT NULL,
+--    Email VARCHAR(255) NOT NULL UNIQUE,
+--    Password VARCHAR(255) NOT NULL,
+--    Address VARCHAR(255) NOT NULL,
+--    ContactNumber VARCHAR(15) NOT NULL
+--);
+
+--
+--INSERT INTO Customer_Registration (CustomerID, CustomerName, Email, Password, Address, ContactNumber)
+--VALUES (12345, 'Anurag', 'anurag@gmail.com', 'password123', 'Mumbai', '9876543210');
+
+
+select * from Customer_Registration
+--
+--INSERT INTO products (name, price, description, img_url)
+--VALUES 
+--('Apple', 30.0, 'A sweet, crisp, and juicy fruit, apples come in various colors such as red, green, and yellow.', 'https://media.istockphoto.com/id/184276818/photo/r…20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w='),
+--('Banana', 10.0, 'A soft, sweet, and energy-rich fruit, perfect for snacking or smoothies.', '	https://media.istockphoto.com/id/1184345169/photo/…20&c=NdHyi6Jd9y1855Q5mLO2tV_ZRnaJGtZGCSMMT7oxdF4='),
+--('Rice', 60.0, 'Premium quality basmati rice, perfect for everyday cooking.', '	https://media.istockphoto.com/id/519309790/photo/p…20&c=A9A87HykypkOo5qLMQm6bZjBQn83NE1NHMppw8-6Tnc='),
+--('Milk', 50.0, 'Fresh and creamy milk, rich in calcium and nutrients.', 'https://thumbs.dreamstime.com/b/glass-milk-jug-wooden-table-48841327.jpg'),;
+
+
+CREATE TABLE products (
+    productId INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    productName VARCHAR(255) NOT NULL,
+    productPrice DECIMAL(10, 2) NOT NULL,
+    imgUrl VARCHAR(255),
+    productDescription VARCHAR(500)
+);
+drop table products
+CREATE TABLE Placedorders (
+    id INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) PRIMARY KEY,
+    CustomerName VARCHAR(100) NOT NULL,
+    ContactNumber VARCHAR(15) NOT NULL,
+    ProductName VARCHAR(100) NOT NULL,
+    ProductPrice DOUBLE NOT NULL,
+    Quantity INTEGER NOT NULL
+);
+
+    CREATE TABLE orders (
+    id INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) PRIMARY KEY,
+    CustomerName VARCHAR(100) NOT NULL,
+    ContactNumber VARCHAR(15) NOT NULL,
+    ProductName VARCHAR(100) NOT NULL,
+    ProductPrice DOUBLE NOT NULL,
+    Quantity INTEGER NOT NULL
+);
+    drop table orders
+    
+select * from orders
+
+select * from Placedorders
+
+--With Images
+
+ INSERT INTO products (productName, productPrice, imgUrl, productDescription) 
+VALUES 
+    ('Apple', 120.00, 'images/apple.jpg', 'Fresh and juicy apples sourced from organic farms.'),
+    ('Orange', 80.00, 'images/orange.jfif', 'Sweet and tangy oranges perfect for refreshing juices.'),
+    ('Mango', 150.00, 'https://nurserynisarga.in/wp-content/uploads/2021/07/BADAMI-WEB.jpg', 'Delicious tropical mangoes, a true summer delight.'),
+    ('Banana', 50.00, 'images/banana.jpg', 'Organic bananas full of essential vitamins and fiber.'),
+    ('Grapes', 90.00, 'images/grapes.jfif', 'Seedless green grapes, sweet and perfect for snacking.'),
+    ('Pineapple', 200.00, 'images/pineapple.jfif', 'Juicy pineapple with a perfect balance of sweet and tart flavors.'),
+    ('Strawberry', 250.00, 'https://cdn.pixabay.com/photo/2023/11/11/06/43/strawberry-8380614_640.jpg', 'Fresh and luscious strawberries perfect for desserts.'),
+    ('Watermelon', 180.00, 'images/watermelon.jfif', 'Refreshing and hydrating watermelons, ideal for summer.'),
+    ('Papaya', 70.00, 'images/papaya.jfif', 'Ripe papayas with a soft texture and great flavor.'),
+    ('Blueberries', 300.00, 'https://images3.alphacoders.com/915/915251.jpg', 'High-quality blueberries rich in antioxidants and nutrients.'),
+    ('Rice', 60.0,'images/Rice.jpg','Premium quality basmati rice, perfect for everyday cooking.'),
+    ('Milk', 50.0,'https://thumbs.dreamstime.com/b/glass-milk-jug-wooden-table-48841327.jpg','Fresh and creamy milk, rich in calcium and nutrients.');
+    
+    
+truncate table products;
